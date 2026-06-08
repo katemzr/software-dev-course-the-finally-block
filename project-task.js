@@ -45,18 +45,30 @@ Step 4: Test Your Solution
 function processFile(fileName, fileData) {
   try {
     // TODO: Add input validation here
+    if (!fileName || fileName == "") {
+      throw new Error ("File name is missing or is not a string. Ya big dummy!");
     
+    }
+    if (!fileData || fileData == "" || typeof(fileData)!== 'string') {
+      throw new Error ("File data is missing or is not a string. Ya bigger dummy!");
+    
+    }
+
     // TODO: Implement simulated file processing here
     console.log(`Processing file: ${fileName}`);
     console.log(`File content: ${fileData}`);
     
     // TODO: Add simulated file operations (reading/writing)
+    console.log(`Reading ${fileName}. It looks cool.`);
+    console.log(`Writing up some ${fileData}. Not sure this is what I should do. I'm just a file processor for a virtual library.`);
     
   } catch (err) {
     // TODO: Implement error handling
     console.error(err);
+
+  } finally {
+    console.log("Resources are being released."); //Step 3: Implement the finally block
   }
-  // TODO: Implement a finally block to close resources
 }
 
 // ============================================
